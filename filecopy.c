@@ -8,8 +8,16 @@ void filecopy(FILE *ifp, FILE *ofp, int show_line_numbers, int show_dollar, int 
 		char last_ch = '\n';
 		int pag_line = 1;
 		char b;
+	
+		int bin = 0;
 		
 		while ((c = getc(ifp)) != EOF) {
+			
+			if (isascii(c) != 0) {
+				printf("%-02x", c);
+				bin = 1;
+			}
+			
 			if (show_line_numbers == 1) {
 				if (last_ch == '\n') {
 					fprintf(ofp, "%-4d ", line++);
@@ -48,8 +56,9 @@ void filecopy(FILE *ifp, FILE *ofp, int show_line_numbers, int show_dollar, int 
 					pag_line = 0;
 					}
 				}
-			
-			putc(c, ofp);
-			last_ch = c;
+			if (bin != 0) {
+				putc(c, ofp);
+				last_ch = c;
+			 	}
 			}
 		}
