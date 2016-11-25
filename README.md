@@ -5,7 +5,7 @@
 
 ###To install just run the sh script: 
 ```
-install.sh
+./install.sh
 ```
 #### Usage
 ```
