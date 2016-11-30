@@ -52,8 +52,8 @@ int main(int argc, char *argv[])
 								break;
 							default:
 								fprintf(stderr, "Unkown option: %s\nDo -h for help\n", argv[i]);
-								break
-							}
+								break;
+							};
 						}
 					}
 		filename = argv[argc];
@@ -88,4 +88,4 @@ int main(int argc, char *argv[])
 		return 0;
 	}
 					
-					
+}
