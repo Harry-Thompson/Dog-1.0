@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 				char *arg = argv[i];
 				if (*arg++ == '-') {
 					firstfile++;
-					while (*arg != 0) {
+					while (*arg != '\0') {
 						switch(*arg++) {
 							case 'l':
 								line = 1;
